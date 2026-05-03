@@ -1,0 +1,116 @@
+/* App-specific styles */
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper stacking context */
+main {
+  position: relative;
+}
+
+/* Section stacking for pinned sections */
+.section-pinned {
+  will-change: transform;
+}
+
+/* Button hover animations */
+.btn-primary,
+.btn-outline {
+  will-change: transform;
+}
+
+/* Card hover effects */
+.card-white {
+  will-change: transform, box-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 48px rgba(11, 26, 62, 0.14);
+}
+
+/* Form input focus states */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Link underline animation */
+a {
+  position: relative;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 640px) {
+  .heading-xl {
+    font-size: clamp(32px, 8vw, 44px);
+  }
+  
+  .heading-lg {
+    font-size: clamp(28px, 7vw, 34px);
+  }
+  
+  .heading-md {
+    font-size: clamp(24px, 6vw, 28px);
+  }
+}
+
+/* Ensure content is visible during page load */
+.section-pinned > * {
+  opacity: 1;
+}
+
+/* Mobile menu transitions */
+header {
+  will-change: background-color, backdrop-filter;
+}
+
+/* Floating CTA safe area for mobile */
+@media (max-width: 1024px) {
+  footer {
+    padding-bottom: 100px;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F6FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0B1A3E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a2d5c;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(46, 195, 229, 0.3);
+  color: #0B1A3E;
+}
